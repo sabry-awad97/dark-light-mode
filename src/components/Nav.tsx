@@ -6,6 +6,7 @@ export const Nav = () => {
   const backgroundColor = mode === 'dark' ? 'rgb(0 0 0 / 50%)' : undefined;
   return (
     <nav
+      id="nav"
       style={{
         backgroundColor,
       }}

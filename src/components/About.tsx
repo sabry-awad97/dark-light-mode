@@ -3,7 +3,7 @@ import { useTheme } from '../contexts/useTheme';
 export const About = () => {
   const { mode } = useTheme();
   return (
-    <section>
+    <section id="about">
       <h1>Undraw Illustrations</h1>
       <div className="about-container">
         <div className="image-container">

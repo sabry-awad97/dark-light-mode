@@ -25,16 +25,15 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
     document.documentElement.setAttribute('data-theme', currentTheme);
   }, []);
 
+  const setTheme = (theme: TMode) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    setMode(theme);
+  };
+
   const switchTheme: React.ChangeEventHandler<HTMLInputElement> = e => {
-    if (e.target.checked) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
-      setMode('dark');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-      localStorage.setItem('theme', 'light');
-      setMode('light');
-    }
+    if (e.target.checked) setTheme('dark');
+    else setTheme('light');
   };
 
   return (
