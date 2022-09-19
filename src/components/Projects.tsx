@@ -1,4 +1,14 @@
-export const Projects = () => {
+import { FC } from 'react';
+import { TMode } from '../types';
+
+interface Props {
+  theme: TMode;
+}
+
+export const Projects: FC<Props> = ({ theme }) => {
+  const backgroundColor =
+    theme === 'dark' ? 'rgb(255 255 255 / 50%)' : 'rgb(0 0 0 / 50%)';
+
   return (
     <section id="projects">
       <h1>Buttons</h1>
@@ -14,7 +24,12 @@ export const Projects = () => {
           Disabled
         </button>
       </div>
-      <div className="text-box" id="text-box">
+      <div
+        className="text-box"
+        style={{
+          backgroundColor,
+        }}
+      >
         <p>
           Lorem ipsum dolor amet consectetur adipisicing elit. Voluptatibus
           magnam sit alias eos ducimus expedita quam, corporis, blanditiis vel

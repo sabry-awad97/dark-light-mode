@@ -1,6 +1,6 @@
 export const Contact = () => {
   return (
-    <section id="contact">
+    <section>
       <div className="social-icons">
         <i className="fab fa-github"></i>
         <i className="fab fa-codepen"></i>

@@ -1,12 +1,19 @@
-export const About = () => {
+import { FC } from 'react';
+import { TMode } from '../types';
+
+interface Props {
+  theme: TMode;
+}
+
+export const About: FC<Props> = ({ theme }) => {
   return (
-    <section id="about">
+    <section>
       <h1>Undraw Illustrations</h1>
       <div className="about-container">
         <div className="image-container">
           <h2>Web Innovation</h2>
           <img
-            src="img/undraw_proud_coder_light.svg"
+            src={`img/undraw_proud_coder_${theme}.svg`}
             alt="Proud Coder"
             id="image1"
           />
@@ -14,7 +21,7 @@ export const About = () => {
         <div className="image-container">
           <h2>Problem Solving</h2>
           <img
-            src="img/undraw_feeling_proud_light.svg"
+            src={`img/undraw_feeling_proud_${theme}.svg`}
             alt="Feeling Proud"
             id="image2"
           />
@@ -22,7 +29,7 @@ export const About = () => {
         <div className="image-container">
           <h2>High Concept</h2>
           <img
-            src="img/undraw_conceptual_idea_light.svg"
+            src={`img/undraw_conceptual_idea_${theme}.svg`}
             alt="Conceptual Idea"
             id="image3"
           />
