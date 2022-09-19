@@ -1,13 +1,10 @@
-import { FC } from 'react';
-import { TMode } from '../types';
+import { useTheme } from '../contexts/useTheme';
 
-interface Props {
-  theme: TMode;
-}
+export const Projects = () => {
+  const { mode } = useTheme();
 
-export const Projects: FC<Props> = ({ theme }) => {
   const backgroundColor =
-    theme === 'dark' ? 'rgb(255 255 255 / 50%)' : 'rgb(0 0 0 / 50%)';
+    mode === 'dark' ? 'rgb(255 255 255 / 50%)' : 'rgb(0 0 0 / 50%)';
 
   return (
     <section id="projects">

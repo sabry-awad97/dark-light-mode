@@ -1,12 +1,9 @@
-import { FC } from 'react';
-import { TMode } from '../types';
+import { useTheme } from '../contexts/useTheme';
 
-interface Props {
-  theme: TMode;
-}
+export const Nav = () => {
+  const { mode } = useTheme();
 
-export const Nav: FC<Props> = ({ theme }) => {
-  const backgroundColor = theme === 'dark' ? 'rgb(0 0 0 / 50%)' : undefined;
+  const backgroundColor = mode === 'dark' ? 'rgb(0 0 0 / 50%)' : undefined;
   return (
     <nav
       style={{

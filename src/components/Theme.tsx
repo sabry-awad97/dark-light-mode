@@ -1,12 +1,8 @@
-import { ChangeEventHandler, FC } from 'react';
-import { TMode } from '../types';
+import { useTheme } from '../contexts/useTheme';
 
-interface Props {
-  theme: TMode;
-  onThemeSwitch: ChangeEventHandler<HTMLInputElement>;
-}
+export const Theme = () => {
+  const { mode: theme, switchTheme: onThemeSwitch } = useTheme();
 
-export const Theme: FC<Props> = ({ theme, onThemeSwitch }) => {
   const icon = theme === 'light' ? 'fa-sun' : 'fa-moon'; // ☀️ | 🌒
   const mode = theme === 'light' ? 'Light Mode' : 'Dark Mode';
   const checked = theme === 'dark';
